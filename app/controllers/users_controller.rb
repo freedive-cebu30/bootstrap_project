@@ -7,9 +7,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    puts 'show'
-    puts 'show'
-    puts 'show'
+    @user = User.find params[:id]
     puts 'show'
   end
 
