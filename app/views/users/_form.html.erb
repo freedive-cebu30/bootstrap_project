@@ -1,0 +1,52 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :sex %>
+    <%= form.number_field :sex, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :age %>
+    <%= form.number_field :age, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :address %>
+    <%= form.number_field :address, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :attendance %>
+    <%= form.number_field :attendance, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :opinion %>
+    <%= form.text_area :opinion, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
